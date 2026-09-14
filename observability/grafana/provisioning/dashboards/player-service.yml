@@ -1,0 +1,6 @@
+apiVersion: 1
+providers:
+  - name: Player Service
+    type: file
+    options:
+      path: /var/lib/grafana/dashboards

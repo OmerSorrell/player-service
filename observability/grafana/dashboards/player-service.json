@@ -1,0 +1,49 @@
+{
+  "uid": "player-service",
+  "title": "Player Service",
+  "schemaVersion": 41,
+  "version": 1,
+  "refresh": "5s",
+  "time": { "from": "now-15m", "to": "now" },
+  "panels": [
+    {
+      "id": 1, "type": "timeseries", "title": "HTTP request rate and p95 / p99 latency",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": { "x": 0, "y": 0, "w": 12, "h": 9 },
+      "fieldConfig": { "defaults": { "unit": "reqps" }, "overrides": [{ "matcher": { "id": "byRegexp", "options": "p9.*" }, "properties": [{ "id": "unit", "value": "s" }, { "id": "custom.axisPlacement", "value": "right" }] }] },
+      "targets": [
+        { "refId": "A", "expr": "sum(rate(http_server_request_duration_seconds_count{http_route!~\"/metrics|/health/.*\"}[1m]))", "legendFormat": "requests/s" },
+        { "refId": "B", "expr": "histogram_quantile(0.95, sum by(le) (rate(http_server_request_duration_seconds_bucket{http_route!~\"/metrics|/health/.*\"}[1m])))", "legendFormat": "p95" },
+        { "refId": "C", "expr": "histogram_quantile(0.99, sum by(le) (rate(http_server_request_duration_seconds_bucket{http_route!~\"/metrics|/health/.*\"}[1m])))", "legendFormat": "p99" }
+      ]
+    },
+    {
+      "id": 2, "type": "timeseries", "title": "Redis p95 latency and failures",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": { "x": 12, "y": 0, "w": 12, "h": 9 },
+      "fieldConfig": { "defaults": { "unit": "s" }, "overrides": [{ "matcher": { "id": "byRegexp", "options": "failures.*" }, "properties": [{ "id": "unit", "value": "ops" }, { "id": "custom.axisPlacement", "value": "right" }] }] },
+      "targets": [
+        { "refId": "A", "expr": "histogram_quantile(0.95, sum by(le, operation) (rate(player_redis_duration_seconds_bucket[1m])))", "legendFormat": "{{operation}} p95" },
+        { "refId": "B", "expr": "sum by(kind) (rate(player_redis_failures_total[1m]))", "legendFormat": "failures {{kind}} /s" }
+      ]
+    },
+    {
+      "id": 3, "type": "timeseries", "title": "Gift outcomes and idempotency hits",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": { "x": 0, "y": 9, "w": 12, "h": 9 },
+      "targets": [
+        { "refId": "A", "expr": "sum by(outcome) (rate(player_operations_total{operation=\"Gift\"}[1m]))", "legendFormat": "{{outcome}} /s" },
+        { "refId": "B", "expr": "sum(rate(player_operations_total{replay=\"true\"}[1m]))", "legendFormat": "idempotency hits/s" }
+      ]
+    },
+    {
+      "id": 4, "type": "timeseries", "title": "HTTP 5xx and Redis timeout rate",
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": { "x": 12, "y": 9, "w": 12, "h": 9 },
+      "targets": [
+        { "refId": "A", "expr": "sum by(http_response_status_code) (rate(http_server_request_duration_seconds_count{http_response_status_code=~\"5..\"}[1m]))", "legendFormat": "HTTP {{http_response_status_code}} /s" },
+        { "refId": "B", "expr": "sum(rate(player_redis_failures_total{kind=\"timeout\"}[1m]))", "legendFormat": "Redis timeouts/s" }
+      ]
+    }
+  ]
+}

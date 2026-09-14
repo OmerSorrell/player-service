@@ -1,0 +1,13 @@
+<Solution>
+  <Project Path="PlayerService.Api.csproj" />
+  <Folder Name="/src/">
+    <Project Path="src/PlayerService.Application/PlayerService.Application.csproj" />
+    <Project Path="src/PlayerService.Infrastructure.Redis/PlayerService.Infrastructure.Redis.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PlayerService.Tests/PlayerService.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools/PlayerService.LoadHarness/PlayerService.LoadHarness.csproj" />
+  </Folder>
+</Solution>

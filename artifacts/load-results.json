@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-09-11T15:37:23.63787+00:00",
+  "urls": [
+    "http://localhost:5080",
+    "http://localhost:5081"
+  ],
+  "seconds": 5,
+  "hotWorkers": 32,
+  "run": "load_3eb83cf529c3",
+  "baseline": {
+    "name": "cold_only",
+    "elapsedSeconds": 5.0003025,
+    "requestsPerSecond": 17769.524943740904,
+    "cold": {
+      "requests": 88853,
+      "p50Ms": 0.2021,
+      "p95Ms": 0.3698,
+      "p99Ms": 0.4922
+    },
+    "hot": {
+      "requests": 0,
+      "p50Ms": 0,
+      "p95Ms": 0,
+      "p99Ms": 0
+    },
+    "statuses": {
+      "200": 88853
+    }
+  },
+  "mixed": {
+    "name": "hot_gifts_and_cold_reads",
+    "elapsedSeconds": 5.000846,
+    "requestsPerSecond": 33571.71966503267,
+    "cold": {
+      "requests": 18820,
+      "p50Ms": 0.9507,
+      "p95Ms": 1.7708,
+      "p99Ms": 2.2161
+    },
+    "hot": {
+      "requests": 149067,
+      "p50Ms": 0.9526,
+      "p95Ms": 1.7784,
+      "p99Ms": 2.2405
+    },
+    "statuses": {
+      "200": 167887
+    }
+  },
+  "conservedPoints": 34000,
+  "note": "Closed-loop local diagnostic, not a production capacity or strict latency-isolation guarantee. Failures include business conflicts."
+}

@@ -1,0 +1,13 @@
+2173:C 14 Sep 2026 23:20:17.804 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2173:C 14 Sep 2026 23:20:17.804 * Redis version=8.10.1, bits=64, commit=00000000, modified=1, pid=2173, just started
+2173:C 14 Sep 2026 23:20:17.804 * Configuration loaded
+2173:M 14 Sep 2026 23:20:17.804 * Increased maximum number of open files to 10032 (it was originally set to 2560).
+2173:M 14 Sep 2026 23:20:17.804 * monotonic clock: ARM CNTVCT @ 1000 ticks/us
+2173:M 14 Sep 2026 23:20:17.805 * Running mode=standalone, port=6397.
+2173:M 14 Sep 2026 23:20:17.805 # WARNING: The TCP backlog setting of 511 cannot be enforced because kern.ipc.somaxconn is set to the lower value of 128.
+2173:M 14 Sep 2026 23:20:17.805 * Server initialized
+2173:M 14 Sep 2026 23:20:17.805 * Ready to accept connections tcp
+2173:M 14 Sep 2026 23:20:17.805 # WARNING: Redis does not require authentication. Redis will accept connections from any local client.
+2173:signal-handler (1789417267) Received SIGTERM scheduling shutdown...
+2173:M 14 Sep 2026 23:21:07.153 * User requested shutdown...
+2173:M 14 Sep 2026 23:21:07.153 # Redis is now ready to exit, bye bye...

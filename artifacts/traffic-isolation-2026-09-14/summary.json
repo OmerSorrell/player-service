@@ -1,0 +1,60 @@
+[
+  {
+    "offeredHotRps": 3200,
+    "enabled": false,
+    "coldP99Ms": 4.4646,
+    "hotP99Ms": 3.8151,
+    "coldStatuses": {
+      "200": 4796
+    },
+    "hotStatuses": {
+      "200": 191904
+    },
+    "coldNonSuccessPercent": 0.0,
+    "hotNonSuccessPercent": 0.0
+  },
+  {
+    "offeredHotRps": 3200,
+    "enabled": true,
+    "coldP99Ms": 3.4059,
+    "hotP99Ms": 151.3078,
+    "coldStatuses": {
+      "200": 4800
+    },
+    "hotStatuses": {
+      "200": 4878,
+      "429": 187058
+    },
+    "coldNonSuccessPercent": 0.0,
+    "hotNonSuccessPercent": 97.4585278426142
+  },
+  {
+    "offeredHotRps": 12800,
+    "enabled": false,
+    "coldP99Ms": 5.8931,
+    "hotP99Ms": 7.2483,
+    "coldStatuses": {
+      "200": 4796
+    },
+    "hotStatuses": {
+      "200": 767744
+    },
+    "coldNonSuccessPercent": 0.0,
+    "hotNonSuccessPercent": 0.0
+  },
+  {
+    "offeredHotRps": 12800,
+    "enabled": true,
+    "coldP99Ms": 3.9306,
+    "hotP99Ms": 152.7108,
+    "coldStatuses": {
+      "200": 4800
+    },
+    "hotStatuses": {
+      "200": 4874,
+      "429": 763126
+    },
+    "coldNonSuccessPercent": 0.0,
+    "hotNonSuccessPercent": 99.36536458333333
+  }
+]

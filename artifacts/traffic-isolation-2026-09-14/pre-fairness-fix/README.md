@@ -1,0 +1,3 @@
+# Superseded diagnostic runs
+
+These pilot/comparison artifacts were produced before the dispatcher rotation correction. The first repeated comparison was interrupted after review found that rotating every inspected queue restored the original ring order and could let a continuously full first queue win repeatedly. They are retained for transparency and excluded from the current report. The strengthened fairness regression test covers this case. Use the completed `run-*.json` files in the parent directory for the final experimental implementation, which has since been reverted. Some logs here are incomplete because the run was intentionally stopped.

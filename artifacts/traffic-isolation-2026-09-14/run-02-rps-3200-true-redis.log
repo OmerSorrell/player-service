@@ -1,0 +1,13 @@
+1392:C 14 Sep 2026 23:12:52.219 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1392:C 14 Sep 2026 23:12:52.219 * Redis version=8.10.1, bits=64, commit=00000000, modified=1, pid=1392, just started
+1392:C 14 Sep 2026 23:12:52.219 * Configuration loaded
+1392:M 14 Sep 2026 23:12:52.219 * Increased maximum number of open files to 10032 (it was originally set to 2560).
+1392:M 14 Sep 2026 23:12:52.219 * monotonic clock: ARM CNTVCT @ 1000 ticks/us
+1392:M 14 Sep 2026 23:12:52.219 * Running mode=standalone, port=6397.
+1392:M 14 Sep 2026 23:12:52.219 # WARNING: The TCP backlog setting of 511 cannot be enforced because kern.ipc.somaxconn is set to the lower value of 128.
+1392:M 14 Sep 2026 23:12:52.220 * Server initialized
+1392:M 14 Sep 2026 23:12:52.220 * Ready to accept connections tcp
+1392:M 14 Sep 2026 23:12:52.220 # WARNING: Redis does not require authentication. Redis will accept connections from any local client.
+1392:signal-handler (1789416821) Received SIGTERM scheduling shutdown...
+1392:M 14 Sep 2026 23:13:41.869 * User requested shutdown...
+1392:M 14 Sep 2026 23:13:41.869 # Redis is now ready to exit, bye bye...

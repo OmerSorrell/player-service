@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-09-14T09:32:17.735815+00:00",
+  "urls": [
+    "http://127.0.0.1:5082",
+    "http://127.0.0.1:5083"
+  ],
+  "seconds": 30,
+  "hotWorkers": 32,
+  "run": "load_917b8ea38957",
+  "baseline": {
+    "name": "cold_only",
+    "elapsedSeconds": 10.0008017,
+    "requestsPerSecond": 19.998396728534274,
+    "cold": {
+      "requests": 200,
+      "p50Ms": 1.5988,
+      "p95Ms": 3.7048,
+      "p99Ms": 4.2346
+    },
+    "hot": {
+      "requests": 0,
+      "p50Ms": 0,
+      "p95Ms": 0,
+      "p99Ms": 0
+    },
+    "coldStatuses": {
+      "200": 200
+    },
+    "hotStatuses": {},
+    "statuses": {
+      "200": 200
+    }
+  },
+  "mixed": {
+    "name": "hot_gifts_and_cold_reads",
+    "elapsedSeconds": 30.0011302,
+    "requestsPerSecond": 104.9960444490188,
+    "cold": {
+      "requests": 600,
+      "p50Ms": 2.1365,
+      "p95Ms": 2.6724,
+      "p99Ms": 8.1087
+    },
+    "hot": {
+      "requests": 2550,
+      "p50Ms": 1.9765,
+      "p95Ms": 2.6157,
+      "p99Ms": 7.2934
+    },
+    "coldStatuses": {
+      "200": 600
+    },
+    "hotStatuses": {
+      "200": 2550,
+      "429": 93434
+    },
+    "statuses": {
+      "200": 3150,
+      "429": 93434
+    }
+  },
+  "conservedPoints": 34000,
+  "note": "Same Release build; admission OFF/ON includes its authentication-precheck overhead. 5s mixed warmup, 3s recovery, 10s cold baseline, 3s recovery, 30s mixed. Four cold workers target one request per 200ms; 32 hot workers target one per 10ms, at most one in flight per worker. Missed schedule slots are skipped, not queued. Percentiles and requestsPerSecond count HTTP 200 only. Status counts include all outcomes. Dedicated fresh Redis per run."
+}

@@ -1,0 +1,45 @@
+{
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "architecture": "arm64",
+  "redisVersion": "Redis server v=8.10.1 sha=00000000:1 malloc=libc bits=64 build=81870544b30d700a",
+  "config": {
+    "Urls": "http://localhost:5080",
+    "Redis": {
+      "ConnectionString": "localhost:6379,abortConnect=false,asyncTimeout=2000,connectTimeout=2000",
+      "KeyPrefix": "player-service:",
+      "SessionSeconds": 1800,
+      "IdempotencySeconds": 86400
+    },
+    "Logging": {
+      "LogLevel": {
+        "Default": "Information",
+        "Microsoft.AspNetCore": "Warning"
+      }
+    },
+    "AllowedHosts": "*",
+    "Traffic": {
+      "Enabled": true,
+      "PlayerRequestsPerSecond": 40,
+      "PlayerBurst": 8,
+      "PlayerConcurrency": 1,
+      "PlayerQueueLimit": 8,
+      "QueueTimeoutMilliseconds": 150,
+      "TotalConcurrency": 32,
+      "ReservedColdConcurrency": 8,
+      "ReplicaBudgetCount": 2,
+      "MaxPlayers": 10000,
+      "MaxQueuedRequests": 1024,
+      "IdentityCacheSeconds": 60
+    }
+  },
+  "sha256": {
+    "appsettings.json": "7d4dbf8fcf95192125e8f05be5221156c6c3e169c739483e7134df10fc2d77f0",
+    "src/PlayerService.Api/Traffic/TrafficOptions.cs": "7928db0e96033f7ab7b98dfa654ad46a64d61dfed81065250867a7c98dc0cea0",
+    "src/PlayerService.Api/Traffic/FairPlayerScheduler.cs": "ca263b959578912a9739113a883574ecb1fd6a5fcbf87004ac8f2a5ec9cc4787",
+    "src/PlayerService.Api/Traffic/TrafficAdmission.cs": "4c1f3b5578e12bfb7fb69fc8a3514ad5bd73bb38c16c8c977d304a3ac88bd591",
+    "bin/Release/net10.0/PlayerService.Api.dll": "d802083179c57a904b75fc7913cb458c0f5c1f4b4763789fd7fe5b6618806724",
+    "tools/PlayerService.LoadHarness/Program.cs": "a64e436e10fef2fddfb7197d811b6894d4299d82417396a5ada7bec50f379fae",
+    "tools/PlayerService.LoadHarness/bin/Release/net10.0/PlayerService.LoadHarness.dll": "97a2f55972719796d37d28f2d4cfec2483edfe8a7c8688ab922b73fcc519dbbc"
+  },
+  "notes": "Same Release API and harness binaries used for all final run-*.json trials. Redis connection/prefix, API URL and Traffic.Enabled overridden by runner. API log level Warning. Local Mac; generator, APIs and Redis share the machine."
+}

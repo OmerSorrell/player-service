@@ -1,0 +1,141 @@
+{
+  "timestamp": "2026-09-14T20:13:41.832153+00:00",
+  "urls": [
+    "http://127.0.0.1:5180",
+    "http://127.0.0.1:5181"
+  ],
+  "seconds": 20,
+  "hotBatch": 32,
+  "targetHotRequestsPerSecond": 3200,
+  "targetColdRequestsPerSecond": 80,
+  "run": "load_047ccb46a8d7",
+  "baseline": {
+    "name": "cold_only",
+    "offeredSeconds": 19.9896263,
+    "elapsedSeconds": 19.9900178,
+    "missedTicks": 0,
+    "skippedHot": 0,
+    "skippedCold": 0,
+    "cold": {
+      "requests": 1600,
+      "successfulRequestsPerSecond": 80,
+      "nonSuccessPercent": 0,
+      "throttledPercent": 0,
+      "serverOrTransportFailurePercent": 0,
+      "success": {
+        "requests": 1600,
+        "p50Ms": 1.6565,
+        "p95Ms": 3.4414,
+        "p99Ms": 5.8632
+      },
+      "rejected": {
+        "requests": 0,
+        "p50Ms": null,
+        "p95Ms": null,
+        "p99Ms": null
+      },
+      "all": {
+        "requests": 1600,
+        "p50Ms": 1.6565,
+        "p95Ms": 3.4414,
+        "p99Ms": 5.8632
+      },
+      "statuses": {
+        "200": 1600
+      }
+    },
+    "hot": {
+      "requests": 0,
+      "successfulRequestsPerSecond": 0,
+      "nonSuccessPercent": 0,
+      "throttledPercent": 0,
+      "serverOrTransportFailurePercent": 0,
+      "success": {
+        "requests": 0,
+        "p50Ms": null,
+        "p95Ms": null,
+        "p99Ms": null
+      },
+      "rejected": {
+        "requests": 0,
+        "p50Ms": null,
+        "p95Ms": null,
+        "p99Ms": null
+      },
+      "all": {
+        "requests": 0,
+        "p50Ms": null,
+        "p95Ms": null,
+        "p99Ms": null
+      },
+      "statuses": {}
+    }
+  },
+  "mixed": {
+    "name": "hot_gifts_and_cold_reads",
+    "offeredSeconds": 19.9920937,
+    "elapsedSeconds": 20.1441367,
+    "missedTicks": 0,
+    "skippedHot": 0,
+    "skippedCold": 0,
+    "cold": {
+      "requests": 1600,
+      "successfulRequestsPerSecond": 80,
+      "nonSuccessPercent": 0,
+      "throttledPercent": 0,
+      "serverOrTransportFailurePercent": 0,
+      "success": {
+        "requests": 1600,
+        "p50Ms": 1.3079,
+        "p95Ms": 2.2302,
+        "p99Ms": 3.6637
+      },
+      "rejected": {
+        "requests": 0,
+        "p50Ms": null,
+        "p95Ms": null,
+        "p99Ms": null
+      },
+      "all": {
+        "requests": 1600,
+        "p50Ms": 1.3079,
+        "p95Ms": 2.2302,
+        "p99Ms": 3.6637
+      },
+      "statuses": {
+        "200": 1600
+      }
+    },
+    "hot": {
+      "requests": 64000,
+      "successfulRequestsPerSecond": 81.3,
+      "nonSuccessPercent": 97.459375,
+      "throttledPercent": 97.459375,
+      "serverOrTransportFailurePercent": 0,
+      "success": {
+        "requests": 1626,
+        "p50Ms": 145.4427,
+        "p95Ms": 150.9953,
+        "p99Ms": 151.631
+      },
+      "rejected": {
+        "requests": 62374,
+        "p50Ms": 0.3128,
+        "p95Ms": 2.432,
+        "p99Ms": 151.318
+      },
+      "all": {
+        "requests": 64000,
+        "p50Ms": 0.3165,
+        "p95Ms": 141.9182,
+        "p99Ms": 151.3542
+      },
+      "statuses": {
+        "200": 1626,
+        "429": 62374
+      }
+    }
+  },
+  "conservedPoints": 34000,
+  "note": "Open-loop batches every 10ms; four cold reads every 50ms. Both hot players use every API. Latencies include body download and client connection waiting. Successful, rejected and all-response percentiles are separate. Generator skips late ticks or launches over 8192 in-flight and reports these explicitly. No retries/backoff during measurement. Localhost diagnostic, not a production isolation guarantee."
+}

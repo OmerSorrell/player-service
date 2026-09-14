@@ -1,0 +1,15 @@
+.dotnet/
+**/bin/
+**/obj/
+# Retain experiment evidence, but exclude published binaries and new build artifacts.
+artifacts/*
+!artifacts/load-results.json
+!artifacts/admission-latency-2026-09-14.json
+!artifacts/admission-ab-2026-09-14/
+!artifacts/traffic-isolation-2026-09-14/
+.DS_Store
+*.user
+
+.env
+.env.*
+!.env.example

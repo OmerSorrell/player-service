@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <DefaultItemExcludes>$(DefaultItemExcludes);.dotnet/**;artifacts/**;tests/**;tools/**;src/**/obj/**;src/**/bin/**</DefaultItemExcludes>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.18.0" />
+    <PackageReference Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" Version="1.18.0-beta.1" />
+    <Compile Include="src/PlayerService.Api/**/*.cs" />
+    <ProjectReference Include="src/PlayerService.Application/PlayerService.Application.csproj" />
+    <ProjectReference Include="src/PlayerService.Infrastructure.Redis/PlayerService.Infrastructure.Redis.csproj" />
+  </ItemGroup>
+</Project>

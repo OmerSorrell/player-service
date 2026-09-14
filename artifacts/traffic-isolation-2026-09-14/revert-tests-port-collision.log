@@ -1,0 +1,14 @@
+Test run for /Users/omersorrell/Projects/player-service/tests/PlayerService.Tests/bin/Release/net10.0/PlayerService.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:02.90]     PlayerService.Tests.ConcurrencyTests.UnavailableRedisReturnsRetryable503 [FAIL]
+  Failed PlayerService.Tests.ConcurrencyTests.UnavailableRedisReturnsRetryable503 [52 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: ServiceUnavailable
+Actual:   OK
+  Stack Trace:
+     at PlayerService.Tests.ConcurrencyTests.UnavailableRedisReturnsRetryable503() in /Users/omersorrell/Projects/player-service/tests/PlayerService.Tests/ConcurrencyTests.cs:line 287
+   at PlayerService.Tests.ConcurrencyTests.UnavailableRedisReturnsRetryable503() in /Users/omersorrell/Projects/player-service/tests/PlayerService.Tests/ConcurrencyTests.cs:line 290
+--- End of stack trace from previous location ---
+
+Failed!  - Failed:     1, Passed:    21, Skipped:     0, Total:    22, Duration: 3 s - PlayerService.Tests.dll (net10.0)
